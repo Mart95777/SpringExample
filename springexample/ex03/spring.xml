@@ -2,33 +2,35 @@
 <!DOCTYPE beans PUBLIC ".//SPRING/DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
 <beans>
-	<bean id="triangle" class="springexample.ex02.Triangle">
-		<property name="pointA" ref="point0">
-			
+	<bean id="triangle" class="springexample.ex03.Triangle">
+		<property name="points" >
+			<list>
+				<ref bean="point0" />
+				<ref bean="point1" />
+				<ref bean="point2" />
+			</list>
 		</property>
-		<property name="pointB" ref="point1"></property>
-		<property name="pointC" ref="point2"></property>
 		<property name="tid">
-			<bean class="springexample.ex02.TextWithId">
+			<bean class="springexample.ex03.TextWithId">
 				<property name="s" value="Text inside triangle"></property>
 				<property name="id" value="7"></property>
 			</bean>
 		</property>
 	</bean>	
-	<bean id="triangle1" class="springexample.ex02.Triangle">
+	<bean id="triangle1" class="springexample.ex03.Triangle">
 
 	</bean>	
 	
 	
-	<bean id="point0" class="springexample.ex02.Point">
+	<bean id="point0" class="springexample.ex03.Point">
 		<property name="x" value="0" />
 		<property name="y" value="0" />
 	</bean>
-	<bean id="point1" class="springexample.ex02.Point">
+	<bean id="point1" class="springexample.ex03.Point">
 		<property name="x" value="-20" />
 		<property name="y" value="0" />
 	</bean>
-	<bean id="point2" class="springexample.ex02.Point">
+	<bean id="point2" class="springexample.ex03.Point">
 		<property name="x" value="0" />
 		<property name="y" value="20" />
 	</bean>

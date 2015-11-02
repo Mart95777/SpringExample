@@ -22,6 +22,7 @@ import javax.swing.JPanel;
 
 import springexample.ex01.Example01;
 import springexample.ex02.Example02;
+import springexample.ex03.Example03;
 
 /**
  * @author marcin
@@ -95,6 +96,18 @@ public class Starter extends JFrame {
 	        }
 	    });
 	    ExampleMenu.add(ex02MenuItem);
+	    
+	    JMenuItem ex03MenuItem = new JMenuItem("Example 03");
+	    ex03MenuItem.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		//JOptionPane.showMessageDialog(null, "Testing menu item");
+	    		String pathToApp = "src/";
+	    		String pathToExample = "springexample/ex03/";
+	    		Example03 ex03 = new Example03(pathToApp, pathToExample);
+	    		//ex02.printSomething();
+	        }
+	    });
+	    ExampleMenu.add(ex03MenuItem);
 		
 	    // done with menu creation, set it !s
 	    setJMenuBar(menuBar);

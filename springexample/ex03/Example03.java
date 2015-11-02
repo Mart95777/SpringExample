@@ -1,4 +1,4 @@
-package springexample.ex02;
+package springexample.ex03;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -18,12 +18,15 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.FileSystemResource;
 
+import springexample.ex03.CustomOutputStream;
+import springexample.ex03.Triangle;
+
 import java.io.*;
 
-public class Example02 extends JFrame {
+public class Example03 extends JFrame {
 	JPanel mainPanel;
 	JTextArea jta;
-	JLabel mainFirstLabel = new JLabel("Example 02 , ...");
+	JLabel mainFirstLabel = new JLabel("Example 03 , collection: list implemented");
 	JButton jButtonStart;
 	/**
 	 * Methods for the constructor
@@ -44,8 +47,8 @@ public class Example02 extends JFrame {
 	} // end private void addcomponent
 	
 // CONSTRUCTOR
-public Example02(final String pathToApp, final String pathToExample){
-	super("Spring Example - Example 02");
+public Example03(final String pathToApp, final String pathToExample){
+	super("Spring Example - Example 03");
 	this.setPreferredSize(new Dimension(700,500));
 	mainPanel = new JPanel();
 	mainPanel.setLayout(new GridBagLayout());
@@ -70,13 +73,6 @@ public Example02(final String pathToApp, final String pathToExample){
     		
     		Triangle triangle = (Triangle) factory.getBean("triangle");
     		triangle.draw();
-    		
-    		Triangle triangle1 = (Triangle) factory.getBean("triangle-alias");
-    		triangle1.draw();
-    		System.out.println("now changing id of triangle, will it influence triangle1 ???");
-    		System.out.println("This shows how singletons work, referencing to single object");
-    		triangle.getTid().setId(8);
-    		triangle1.draw();
     		
     		
 
@@ -111,7 +107,7 @@ public final static void clearConsole(){
     }
 }
 
-}// end of class Example01
+}// end of class Example03
 
 /**
  * This class extends from OutputStream to redirect output to a JTextArrea
@@ -146,4 +142,3 @@ lub
 { "cmd", "/c","fullpath-to-notepad++.exe C:\Test.txt" };
 */
 	
-
