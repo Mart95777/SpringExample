@@ -23,6 +23,8 @@ import javax.swing.JPanel;
 import springexample.ex01.Example01;
 import springexample.ex02.Example02;
 import springexample.ex03.Example03;
+import springexample.ex04.Example04;
+import springexample.ex05.Example05;
 
 /**
  * @author marcin
@@ -72,6 +74,10 @@ public class Starter extends JFrame {
 	    ExampleMenu.setMnemonic(KeyEvent.VK_E);
 	    menuBar.add(ExampleMenu);
 	    
+	    //Categories
+	    JMenu Category1Menu = new JMenu("Basics");
+	    
+	    
 	    // Examples
 	    JMenuItem ex01MenuItem = new JMenuItem("Example 01");
 	    ex01MenuItem.addActionListener(new ActionListener() {
@@ -83,7 +89,7 @@ public class Starter extends JFrame {
 	    		ex01.printSomething();
 	        }
 	    });
-	    ExampleMenu.add(ex01MenuItem);
+	    Category1Menu.add(ex01MenuItem);
 	    
 	    JMenuItem ex02MenuItem = new JMenuItem("Example 02");
 	    ex02MenuItem.addActionListener(new ActionListener() {
@@ -95,20 +101,43 @@ public class Starter extends JFrame {
 	    		//ex02.printSomething();
 	        }
 	    });
-	    ExampleMenu.add(ex02MenuItem);
+	    Category1Menu.add(ex02MenuItem);
 	    
-	    JMenuItem ex03MenuItem = new JMenuItem("Example 03");
+	    JMenuItem ex03MenuItem = new JMenuItem("Example 03 - collections");
 	    ex03MenuItem.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		//JOptionPane.showMessageDialog(null, "Testing menu item");
 	    		String pathToApp = "src/";
 	    		String pathToExample = "springexample/ex03/";
 	    		Example03 ex03 = new Example03(pathToApp, pathToExample);
-	    		//ex02.printSomething();
 	        }
 	    });
-	    ExampleMenu.add(ex03MenuItem);
+	    Category1Menu.add(ex03MenuItem);
+	    
+	    JMenuItem ex04MenuItem = new JMenuItem("Example 04 - autowire");
+	    ex04MenuItem.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		//JOptionPane.showMessageDialog(null, "Testing menu item");
+	    		String pathToApp = "src/";
+	    		String pathToExample = "springexample/ex04/";
+	    		Example04 ex04 = new Example04(pathToApp, pathToExample);
+	        }
+	    });
+	    Category1Menu.add(ex04MenuItem);
+	    
+	    JMenuItem ex05MenuItem = new JMenuItem("Example 05 - scopes, ...Aware");
+	    ex05MenuItem.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		//JOptionPane.showMessageDialog(null, "Testing menu item");
+	    		String pathToApp = "src/";
+	    		String pathToExample = "springexample/ex05/";
+	    		Example05 ex05 = new Example05(pathToApp, pathToExample);
+	        }
+	    });
+	    Category1Menu.add(ex05MenuItem);
 		
+	    // adding
+	    ExampleMenu.add(Category1Menu);
 	    // done with menu creation, set it !s
 	    setJMenuBar(menuBar);
 	    
