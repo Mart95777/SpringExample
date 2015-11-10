@@ -48,7 +48,7 @@ public class Example05 extends JFrame {
 	
 // CONSTRUCTOR
 public Example05(final String pathToApp, final String pathToExample){
-	super("Spring Example - Example 04");
+	super("Spring Example - Example 05");
 	this.setPreferredSize(new Dimension(700,500));
 	mainPanel = new JPanel();
 	mainPanel.setLayout(new GridBagLayout());
@@ -76,6 +76,8 @@ public Example05(final String pathToApp, final String pathToExample){
     		ApplicationContext context = new FileSystemXmlApplicationContext(xmlfile);
     		Triangle triangle = (Triangle) context.getBean("triangle");
     		triangle.draw();
+    		//triangle.setApplicationContext(context);
+    		//triangle.draw();
     		//
 
         }

@@ -1,11 +1,16 @@
 package springexample.ex05;
 
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
 import springexample.ex05.Point;
 
-public class Triangle {
+public class Triangle implements ApplicationContextAware {
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
+	private ApplicationContext context = null;
 	
 	//constructors
 	public Triangle(){
@@ -56,5 +61,18 @@ public class Triangle {
 		System.out.println("("+getPointA().getX()+", "+getPointA().getY()+")");
 		System.out.println("("+getPointB().getX()+", "+getPointB().getY()+")");
 		System.out.println("("+getPointC().getX()+", "+getPointC().getY()+")");
+		if(context == null){
+			System.out.println("context is null");
+		}else{
+			System.out.println("context is NOT null");
+		}
+		
+	}
+	
+	@Override
+	public void setApplicationContext(ApplicationContext context)
+			throws BeansException {
+		this.context = context;
+		
 	}
 }// end of class Triangle
