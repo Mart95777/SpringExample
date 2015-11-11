@@ -1,12 +1,13 @@
 package springexample.ex05;
 
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 import springexample.ex05.Point;
 
-public class Triangle implements ApplicationContextAware {
+public class Triangle implements ApplicationContextAware, BeanNameAware {
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
@@ -73,6 +74,11 @@ public class Triangle implements ApplicationContextAware {
 	public void setApplicationContext(ApplicationContext context)
 			throws BeansException {
 		this.context = context;
+		
+	}
+	@Override
+	public void setBeanName(String beanName) {
+		System.out.println("bean name is: "+beanName);
 		
 	}
 }// end of class Triangle

@@ -26,7 +26,8 @@ import java.io.*;
 public class Example05 extends JFrame {
 	JPanel mainPanel;
 	JTextArea jta;
-	JLabel mainFirstLabel = new JLabel("Example 05 , scopes, ApplicationContextAware");
+	JLabel mainFirstLabel = new JLabel("<html>Example 05 , scopes, ApplicationContextAware"
+			+ "<br />Notice where bean name is printed, before triangle draw()</html>");
 	JButton jButtonStart;
 	/**
 	 * Methods for the constructor
