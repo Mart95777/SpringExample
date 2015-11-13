@@ -25,6 +25,7 @@ import springexample.ex02.Example02;
 import springexample.ex03.Example03;
 import springexample.ex04.Example04;
 import springexample.ex05.Example05;
+import springexample.ex06.Example06;
 
 /**
  * @author marcin
@@ -135,6 +136,17 @@ public class Starter extends JFrame {
 	        }
 	    });
 	    Category1Menu.add(ex05MenuItem);
+	    
+	    JMenuItem ex06MenuItem = new JMenuItem("Example 06 - Bean definition inheritance");
+	    ex06MenuItem.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		//JOptionPane.showMessageDialog(null, "Testing menu item");
+	    		String pathToApp = "src/";
+	    		String pathToExample = "springexample/ex06/";
+	    		Example06 ex06 = new Example06(pathToApp, pathToExample);
+	        }
+	    });
+	    Category1Menu.add(ex06MenuItem);
 		
 	    // adding
 	    ExampleMenu.add(Category1Menu);
