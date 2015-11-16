@@ -26,6 +26,7 @@ import springexample.ex03.Example03;
 import springexample.ex04.Example04;
 import springexample.ex05.Example05;
 import springexample.ex06.Example06;
+import springexample.ex07.Example07;
 
 /**
  * @author marcin
@@ -147,6 +148,17 @@ public class Starter extends JFrame {
 	        }
 	    });
 	    Category1Menu.add(ex06MenuItem);
+	    
+	    JMenuItem ex07MenuItem = new JMenuItem("Example 07 - Lifecycle Callbacks");
+	    ex07MenuItem.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		//JOptionPane.showMessageDialog(null, "Testing menu item");
+	    		String pathToApp = "src/";
+	    		String pathToExample = "springexample/ex07/";
+	    		Example07 ex07 = new Example07(pathToApp, pathToExample);
+	        }
+	    });
+	    Category1Menu.add(ex07MenuItem);
 		
 	    // adding
 	    ExampleMenu.add(Category1Menu);

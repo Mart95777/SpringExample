@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC ".//SPRING/DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="triangle" class="springexample.ex07.Triangle">
+		<property name="pointA" ref="pointA" />
+		<property name="pointB" ref="pointB"/>
+		<property name="pointC" ref="pointC"/>
+	</bean>
+	
+	<bean id="pointA" class="springexample.ex07.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="pointB" class="springexample.ex07.Point">
+		<property name="x" value="-27" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="pointC" class="springexample.ex07.Point">
+		<property name="x" value="0" />
+		<property name="y" value="27" />
+	</bean>
+	
+</beans>

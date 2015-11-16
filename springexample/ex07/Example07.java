@@ -1,4 +1,4 @@
-package springexample.ex06;
+package springexample.ex07;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -22,12 +22,12 @@ import org.springframework.core.io.FileSystemResource;
 
 import java.io.*;
 
-public class Example06 extends JFrame {
+public class Example07 extends JFrame {
 	JPanel mainPanel;
 	JTextArea jta;
-	JLabel mainFirstLabel = new JLabel("<html>Example 06 , Bean definition inheritance, parent atribute"
-			+ "<br />triangle1 loads ok, but triangle2 loads pointA, but with no pointC throws exception"
-			+ "<br />expand it further ! with abstract and list(container)</html>");
+	JLabel mainFirstLabel = new JLabel("<html>Example 07 , ..."
+			+ "<br />..."
+			+ "<br />...</html>");
 	JButton jButtonStart;
 	/**
 	 * Methods for the constructor
@@ -48,8 +48,8 @@ public class Example06 extends JFrame {
 	} // end private void addcomponent
 	
 // CONSTRUCTOR
-public Example06(final String pathToApp, final String pathToExample){
-	super("Spring Example - Example 06");
+public Example07(final String pathToApp, final String pathToExample){
+	super("Spring Example - Example 07");
 	this.setPreferredSize(new Dimension(700,500));
 	mainPanel = new JPanel();
 	mainPanel.setLayout(new GridBagLayout());
@@ -75,12 +75,9 @@ public Example06(final String pathToApp, final String pathToExample){
     		@SuppressWarnings("resource")
 			//ApplicationContext context = new ClassPathXmlApplicationContext(xmlfile);
     		ApplicationContext context = new FileSystemXmlApplicationContext(xmlfile);
-    		Triangle triangle1 = (Triangle) context.getBean("triangle1");
-    		System.out.println("triangle1");
-    		triangle1.draw();
-    		Triangle triangle2 = (Triangle) context.getBean("triangle2");
-    		System.out.println("triangle2");
-    		triangle2.draw();
+    		Triangle triangle = (Triangle) context.getBean("triangle");
+    		System.out.println("triangle");
+    		triangle.draw();
 
         }
     });
