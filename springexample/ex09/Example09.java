@@ -1,4 +1,4 @@
-package springexample.ex07;
+package springexample.ex09;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -16,20 +16,18 @@ import javax.swing.JTextArea;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.core.io.FileSystemResource;
 
 import java.io.*;
 
-public class Example07 extends JFrame {
+public class Example09 extends JFrame {
 	JPanel mainPanel;
 	JTextArea jta;
-	JLabel mainFirstLabel = new JLabel("<html>Example 07 , Lifecycle Callbacks"
-			+ "<br />Note AbstractApplicationContext and registerShutDownHook"
-			+ "<br />... but destroy has a problem</html>"
-			+ "<br />Triangle2 class does not use interfaces, more independent from spring</html>");
+	JLabel mainFirstLabel = new JLabel("<html>Example 09 , Bean Factory postprocessor"
+			+ "<br />property file created, to hold pointA coordinates, not in XML"
+			+ "<br />PropertyPlaceholderConfigurer not working?</html>");
 	JButton jButtonStart;
 	/**
 	 * Methods for the constructor
@@ -50,8 +48,8 @@ public class Example07 extends JFrame {
 	} // end private void addcomponent
 	
 // CONSTRUCTOR
-public Example07(final String pathToApp, final String pathToExample){
-	super("Spring Example - Example 07");
+public Example09(final String pathToApp, final String pathToExample){
+	super("Spring Example - Example 09");
 	this.setPreferredSize(new Dimension(700,500));
 	mainPanel = new JPanel();
 	mainPanel.setLayout(new GridBagLayout());
@@ -75,16 +73,11 @@ public Example07(final String pathToApp, final String pathToExample){
     		
     		String xmlfile = "/"+pathToApp + pathToExample + "spring.xml";
     		@SuppressWarnings("resource")
-			//ApplicationContext context = new ClassPathXmlApplicationContext(xmlfile);
-    		AbstractApplicationContext context = new FileSystemXmlApplicationContext(xmlfile);
-    		context.registerShutdownHook();
+
+    		ApplicationContext context = new FileSystemXmlApplicationContext(xmlfile);
     		Triangle triangle = (Triangle) context.getBean("triangle");
-    		System.out.println("--> triangle is about to be drawn");
+    		System.out.println("--> triangle");
     		triangle.draw();
-    		
-    		Triangle2 triangle2 = (Triangle2) context.getBean("triangle2");
-    		System.out.println("--> triangle is about to be drawn as Triangle2 class");
-    		triangle2.draw();
 
         }
     });
@@ -113,7 +106,7 @@ public final static void clearConsole(){
     }
 }
 
-}// end of class Example04
+}// end of class Example09
 
 /**
  * This class extends from OutputStream to redirect output to a JTextArrea

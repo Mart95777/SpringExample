@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC ".//SPRING/DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
-<beans>
+<beans default-init-method="defaultInit" default-destroy-method="defaultDestroy">
 	<bean id="triangle" class="springexample.ex07.Triangle">
+		<property name="pointA" ref="pointA" />
+		<property name="pointB" ref="pointB"/>
+		<property name="pointC" ref="pointC"/>
+	</bean>
+	
+	<bean id="triangle2" class="springexample.ex07.Triangle2" init-method="myInit" destroy-method="myDestroy">
 		<property name="pointA" ref="pointA" />
 		<property name="pointB" ref="pointB"/>
 		<property name="pointC" ref="pointC"/>

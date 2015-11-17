@@ -27,6 +27,8 @@ import springexample.ex04.Example04;
 import springexample.ex05.Example05;
 import springexample.ex06.Example06;
 import springexample.ex07.Example07;
+import springexample.ex08.Example08;
+import springexample.ex09.Example09;
 
 /**
  * @author marcin
@@ -159,6 +161,28 @@ public class Starter extends JFrame {
 	        }
 	    });
 	    Category1Menu.add(ex07MenuItem);
+	    
+	    JMenuItem ex08MenuItem = new JMenuItem("Example 08 - Bean PostProcessor");
+	    ex08MenuItem.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		//JOptionPane.showMessageDialog(null, "Testing menu item");
+	    		String pathToApp = "src/";
+	    		String pathToExample = "springexample/ex08/";
+	    		Example08 ex08 = new Example08(pathToApp, pathToExample);
+	        }
+	    });
+	    Category1Menu.add(ex08MenuItem);
+	    
+	    JMenuItem ex09MenuItem = new JMenuItem("Example 09 - Bean Factory PostProcessor");
+	    ex09MenuItem.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		//JOptionPane.showMessageDialog(null, "Testing menu item");
+	    		String pathToApp = "src/";
+	    		String pathToExample = "springexample/ex09/";
+	    		Example09 ex09 = new Example09(pathToApp, pathToExample);
+	        }
+	    });
+	    Category1Menu.add(ex09MenuItem);
 		
 	    // adding
 	    ExampleMenu.add(Category1Menu);

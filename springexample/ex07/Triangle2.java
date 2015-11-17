@@ -2,22 +2,17 @@ package springexample.ex07;
 
 import javax.swing.JOptionPane;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
-
-import springexample.ex07.Point;
-
-public class Triangle implements InitializingBean, DisposableBean {
+public class Triangle2 {
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
 	
 	//constructors
-	public Triangle(){
+	public Triangle2(){
 		// default, empty??? It looks like it is needed for autowire to work, although it is only byName
 	}
 	//constructor
-	public Triangle(Point pointA, Point pointB, Point pointC) {
+	public Triangle2(Point pointA, Point pointB, Point pointC) {
 		this.pointA = pointA;
 		this.pointA = pointB;
 		this.pointA = pointC;
@@ -63,17 +58,29 @@ public class Triangle implements InitializingBean, DisposableBean {
 		System.out.println("("+getPointB().getX()+", "+getPointB().getY()+")");
 		System.out.println("("+getPointC().getX()+", "+getPointC().getY()+")");
 	}
-	@Override
-	public void afterPropertiesSet() throws Exception {
-		System.out.println("--> afterPropertiesSet is called for triangle bean ...");
+	
+//	@Override
+//	public void afterPropertiesSet() throws Exception {
+//		System.out.println("--> afterPropertiesSet is called for triangle bean ...");
+//	}
+//	@Override
+//	public void destroy() throws Exception {
+//		System.out.println("--> destroy is called for triangle bean ...");
+//		JOptionPane.showMessageDialog(null,"destroy is called for triangle bean","TITLE",JOptionPane.WARNING_MESSAGE);
+//	}
+	
+	public void myInit() throws Exception {
+		System.out.println("--> myInit is called for triangle2 bean ...");
 	}
-	@Override
-	public void destroy() throws Exception {
-		System.out.println("--> destroy is called for triangle bean ...");
-		JOptionPane.showMessageDialog(null,"destroy is called for triangle bean","TITLE",JOptionPane.WARNING_MESSAGE);
+	
+	public void myDestroy() throws Exception {
+		System.out.println("--> myDestroy is called for triangle2 bean ...");
+		JOptionPane.showMessageDialog(null,"destroy is called for triangle2 bean","TITLE",JOptionPane.WARNING_MESSAGE);
 	}
 	
 	public void defaultInit(){
-		System.out.println("--> defaultInit is called for triangle bean ...");
+		System.out.println("--> defaultInit is called for triangle2 bean ...");
 	}
-}// end of class Triangle
+	
+	
+}// end of class Triangle2

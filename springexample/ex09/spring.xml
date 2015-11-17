@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC ".//SPRING/DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<bean id="triangle" class="springexample.ex09.Triangle" >
+		<property name="pointA" ref="pointA" />
+		<property name="pointB" ref="pointB"/>
+		<property name="pointC" ref="pointC"/>
+	</bean>
+	
+	<bean id="pointA" class="springexample.ex09.Point">
+		<property name="x" value=${pointA.pointX} />
+		<property name="y" value=${pointA.pointY} />
+	</bean>
+	<bean id="pointB" class="springexample.ex09.Point">
+		<property name="x" value="-29" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="pointC" class="springexample.ex09.Point">
+		<property name="x" value="0" />
+		<property name="y" value="29" />
+	</bean>
+	
+	<bean class="springexample.ex09.MyBeanFactoryPP" />
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
+		<proerty name="locations" value="pointsconfig.properties" />
+	</bean>
+	
+</beans>

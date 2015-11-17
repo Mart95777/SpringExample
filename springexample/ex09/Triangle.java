@@ -1,22 +1,16 @@
-package springexample.ex07;
+package springexample.ex09;
 
-import javax.swing.JOptionPane;
+import springexample.ex09.Point;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
-
-import springexample.ex07.Point;
-
-public class Triangle implements InitializingBean, DisposableBean {
+public class Triangle {
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
 	
 	//constructors
 	public Triangle(){
-		// default, empty??? It looks like it is needed for autowire to work, although it is only byName
+	// default, empty??? It looks like it is needed for autowire to work, although it is only byName
 	}
-	//constructor
 	public Triangle(Point pointA, Point pointB, Point pointC) {
 		this.pointA = pointA;
 		this.pointA = pointB;
@@ -62,18 +56,7 @@ public class Triangle implements InitializingBean, DisposableBean {
 		System.out.println("("+getPointA().getX()+", "+getPointA().getY()+")");
 		System.out.println("("+getPointB().getX()+", "+getPointB().getY()+")");
 		System.out.println("("+getPointC().getX()+", "+getPointC().getY()+")");
-	}
-	@Override
-	public void afterPropertiesSet() throws Exception {
-		System.out.println("--> afterPropertiesSet is called for triangle bean ...");
-	}
-	@Override
-	public void destroy() throws Exception {
-		System.out.println("--> destroy is called for triangle bean ...");
-		JOptionPane.showMessageDialog(null,"destroy is called for triangle bean","TITLE",JOptionPane.WARNING_MESSAGE);
+		
 	}
 	
-	public void defaultInit(){
-		System.out.println("--> defaultInit is called for triangle bean ...");
-	}
 }// end of class Triangle
