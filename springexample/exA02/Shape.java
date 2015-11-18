@@ -1,4 +1,4 @@
-package springexample.exA01;
+package springexample.exA02;
 
 public interface Shape {
 	public void draw();

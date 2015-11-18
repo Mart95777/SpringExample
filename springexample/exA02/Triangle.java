@@ -1,9 +1,9 @@
-package springexample.exA01;
+package springexample.exA02;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 
-import springexample.exA01.Point;
+import springexample.exA02.Point;
 
 public class Triangle implements Shape {
 	private Point pointA;

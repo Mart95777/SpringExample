@@ -1,4 +1,4 @@
-package springexample.exA01;
+package springexample.exA02;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -18,11 +18,9 @@ import javax.swing.JTextArea;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import springexample.exA02.Shape;
-
 import java.io.*;
 
-public class ExampleA01 extends JFrame {
+public class ExampleA02 extends JFrame {
 	JPanel mainPanel;
 	JTextArea jta;
 	JLabel mainFirstLabel = new JLabel("<html>Example Adv 01 , Coding to interfaces"
@@ -47,7 +45,7 @@ public class ExampleA01 extends JFrame {
 	} // end private void addcomponent
 	
 // CONSTRUCTOR
-public ExampleA01(final String pathToApp, final String pathToExample){
+public ExampleA02(final String pathToApp, final String pathToExample){
 	super("Spring Example - Example Adv 01");
 	this.setPreferredSize(new Dimension(700,500));
 	mainPanel = new JPanel();

@@ -1,4 +1,4 @@
-package springexample.exA01;
+package springexample.exA02;
 
 public class Point {
 	private int x;

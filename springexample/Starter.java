@@ -30,6 +30,7 @@ import springexample.ex07.Example07;
 import springexample.ex08.Example08;
 import springexample.ex09.Example09;
 import springexample.exA01.ExampleA01;
+import springexample.exA02.ExampleA02;
 
 /**
  * @author marcin
@@ -195,6 +196,16 @@ public class Starter extends JFrame {
 	        }
 	    });
 	    Category2Menu.add(exA01MenuItem);
+	    
+	    JMenuItem exA02MenuItem = new JMenuItem("Example A02 - Annotations");
+	    exA02MenuItem.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		String pathToApp = "src/";
+	    		String pathToExample = "springexample/exA02/";
+	    		ExampleA02 exA02 = new ExampleA02(pathToApp, pathToExample);
+	        }
+	    });
+	    Category2Menu.add(exA02MenuItem);
 		
 	    // adding
 	    ExampleMenu.add(Category1Menu);
