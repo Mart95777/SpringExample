@@ -29,6 +29,7 @@ import springexample.ex06.Example06;
 import springexample.ex07.Example07;
 import springexample.ex08.Example08;
 import springexample.ex09.Example09;
+import springexample.exA01.ExampleA01;
 
 /**
  * @author marcin
@@ -80,6 +81,7 @@ public class Starter extends JFrame {
 	    
 	    //Categories
 	    JMenu Category1Menu = new JMenu("Basics");
+	    JMenu Category2Menu = new JMenu("Advanced");
 	    
 	    
 	    // Examples
@@ -183,9 +185,20 @@ public class Starter extends JFrame {
 	        }
 	    });
 	    Category1Menu.add(ex09MenuItem);
+	    
+	    JMenuItem exA01MenuItem = new JMenuItem("Example A01 - Coding to Interfaces");
+	    exA01MenuItem.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		String pathToApp = "src/";
+	    		String pathToExample = "springexample/exA01/";
+	    		ExampleA01 exA01 = new ExampleA01(pathToApp, pathToExample);
+	        }
+	    });
+	    Category2Menu.add(exA01MenuItem);
 		
 	    // adding
 	    ExampleMenu.add(Category1Menu);
+	    ExampleMenu.add(Category2Menu);
 	    // done with menu creation, set it !s
 	    setJMenuBar(menuBar);
 	    

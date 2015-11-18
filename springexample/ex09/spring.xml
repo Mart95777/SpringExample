@@ -9,6 +9,8 @@
 		<property name="pointC" ref="pointC"/>
 	</bean>
 	
+
+	
 	<bean id="pointA" class="springexample.ex09.Point">
 		<property name="x" value=${pointA.pointX} />
 		<property name="y" value=${pointA.pointY} />
