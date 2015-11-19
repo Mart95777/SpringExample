@@ -1,4 +1,4 @@
-package springexample.exA02;
+package springexample.exA03;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -20,11 +20,11 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import java.io.*;
 
-public class ExampleA02 extends JFrame {
+public class ExampleA03 extends JFrame {
 	JPanel mainPanel;
 	JTextArea jta;
-	JLabel mainFirstLabel = new JLabel("<html>Example Adv 02 , Annotations"
-			+ "<br />Note, the '@Required' in the setter of Circle class. It causes, that Spring will not start the application if the center property is set. It prevents application from running to possibly create a runtime error in long time in the future.</html>");
+	JLabel mainFirstLabel = new JLabel("<html>Example Adv 03 , Autowired Annotations"
+			+ "<br />Autowired works fine, when only pointA is given. But providing fourth point named 'center' solves the problem, cause unique name solves problem when there is more beans of needed type. <br />Also, @Qualifier wroks too, as applied in pointA <br />note, that xml namespaces are required this time, for qualifier to work. <br />Also, qualifier 'name' is id of the bean!</html>");
 	JButton jButtonStart;
 	/**
 	 * Methods for the constructor
@@ -45,7 +45,7 @@ public class ExampleA02 extends JFrame {
 	} // end private void addcomponent
 	
 // CONSTRUCTOR
-public ExampleA02(final String pathToApp, final String pathToExample){
+public ExampleA03(final String pathToApp, final String pathToExample){
 	super("Spring Example - Example Adv 01");
 	this.setPreferredSize(new Dimension(700,500));
 	mainPanel = new JPanel();
