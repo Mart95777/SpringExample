@@ -32,6 +32,7 @@ import springexample.ex09.Example09;
 import springexample.exA01.ExampleA01;
 import springexample.exA02.ExampleA02;
 import springexample.exA03.ExampleA03;
+import springexample.exA04.ExampleA04;
 
 /**
  * @author marcin
@@ -217,6 +218,16 @@ public class Starter extends JFrame {
 	        }
 	    });
 	    Category2Menu.add(exA03MenuItem);
+	    
+	    JMenuItem exA04MenuItem = new JMenuItem("Example A04 - JSR-250 Annotations");
+	    exA04MenuItem.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		String pathToApp = "src/";
+	    		String pathToExample = "springexample/exA04/";
+	    		ExampleA04 exA04 = new ExampleA04(pathToApp, pathToExample);
+	        }
+	    });
+	    Category2Menu.add(exA04MenuItem);
 		
 	    // adding
 	    ExampleMenu.add(Category1Menu);

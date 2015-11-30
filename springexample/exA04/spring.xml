@@ -10,13 +10,13 @@
 
    
 
-<!-- 	<bean id="triangle" class="springexample.exA03.Triangle" >
+<!-- 	<bean id="triangle" class="springexample.exA04.Triangle" >
 		<property name="pointA" ref="pointA"/>
 		<property name="pointB" ref="pointB"/>
 		<property name="pointC" ref="pointC"/>
 	</bean> -->
 	
-	<bean id="circle" class="springexample.exA03.Circle" >
+	<bean id="circle" class="springexample.exA04.Circle" >
 		
 	</bean>
 	
@@ -26,22 +26,27 @@
 	-->
 	<context:annotation-config/>
 	
-	<bean id="pointA" class="springexample.exA03.Point">
+	<bean id="pointA" class="springexample.exA04.Point">
 		<qualifier value="forcircle" />
 		<property name="x" value="0" />
 		<property name="y" value="0" />
 	</bean>
- 	<bean id="pointB" class="springexample.exA03.Point">
+ 	<bean id="pointB" class="springexample.exA04.Point">
 		<property name="x" value="-25" />
 		<property name="y" value="0" />
 	</bean>
-	<bean id="pointC" class="springexample.exA03.Point">
+	<bean id="pointC" class="springexample.exA04.Point">
 		<property name="x" value="0" />
 		<property name="y" value="25" />
 	</bean>
 	
+	<bean id="center" class="springexample.exA04.Point">
+		<property name="x" value="0" />
+		<property name="y" value="27777" />
+	</bean>
+	
 	<!-- 
-	<bean id="center" class="springexample.exA03.Point">
+	<bean id="center" class="springexample.exA04.Point">
 		<property name="x" value="7" />
 		<property name="y" value="7" />
 	</bean>
